@@ -1,23 +1,15 @@
 import React, { useContext } from "react";
 
-import { ThemeContext } from "../contexts/ThemeContext";
-import { AuthContext } from "../contexts/AuthContext";
+import { BookContext } from "../contexts/BookContext";
 
-const NavBar = () => {
-  const { isLightTheme, light, dark } = useContext(ThemeContext);
-  const { isAuthenticated, toggleAuth } = useContext(AuthContext);
-  const theme = isLightTheme ? light : dark;
+const Navbar = () => {
+  const { books } = useContext(BookContext);
   return (
-    <nav style={{ background: theme.ui, color: theme.syntax }}>
-      <h1>Context app</h1>
-      <div onClick={toggleAuth}>{isAuthenticated ? "Logged in" : "Logged out"}</div>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contacts</li>
-      </ul>
-    </nav>
+    <div className="navbar">
+      <h1>Reading list</h1>
+      <p>Currently you have {books.length} books to get through...</p>{" "}
+    </div>
   );
 };
 
-export default NavBar;
+export default Navbar;
