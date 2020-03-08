@@ -1,9 +1,14 @@
+// React
 import React from "react";
-import BookContextProvider from "./contexts/BookContext";
+
+// Custom
+
 import Navbar from "./components/Navbar";
-import BookDetails from "./components/BookDetails";
 import BookList from "./components/BookList";
 import NewBookForm from "./components/BookForm";
+
+// Context Providers
+import BookContextProvider from "./contexts/BookContext";
 
 const App = props => {
   return (
